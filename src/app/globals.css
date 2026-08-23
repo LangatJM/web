@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ocean-deep: #0b4f6c;
+  --ocean-mid: #1a7a9e;
+  --ocean-light: #4ecdc4;
+  --coral: #ff6b6b;
+  --coral-dark: #e85555;
+  --sand: #f7f3e9;
+  --sand-dark: #ebe4d4;
+  --gold: #d99a2b;
+  --navy: #0a1628;
+  --background: #faf9f6;
+  --foreground: #0a1628;
+  --muted: #5a6b7d;
 }
 
 @theme inline {
+  --color-ocean-deep: var(--ocean-deep);
+  --color-ocean-mid: var(--ocean-mid);
+  --color-ocean-light: var(--ocean-light);
+  --color-coral: var(--coral);
+  --color-coral-dark: var(--coral-dark);
+  --color-sand: var(--sand);
+  --color-sand-dark: var(--sand-dark);
+  --color-gold: var(--gold);
+  --color-navy: var(--navy);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --font-sans: var(--font-outfit);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+html.dark {
+  --ocean-deep: #042735;
+  --ocean-mid: #0f5a74;
+  --ocean-light: #2bb6b0;
+  --coral: #ff6b6b;
+  --coral-dark: #e85555;
+  --sand: #0b1220;
+  --sand-dark: #071018;
+  --gold: #d4a134;
+  --navy: #ffffff;
+  --background: #041019;
+  --foreground: #e6f2f6;
+  --muted: #9fb0bb;
+}
+
+:root, html.dark {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.gradient-coastal {
+  background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-mid) 50%, var(--ocean-light) 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 24px rgba(11, 79, 108, 0.08);
+}
+
+.hero-decor {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.float-animate {
+  animation: floaty 6s ease-in-out infinite;
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "54ea094e-8a71-4f63-968b-7ec0cd42e196",
+    "fullName": "Test User",
+    "phone": "+254700000000",
+    "location": "Ukunda",
+    "preferredPhone": "whatsapp",
+    "paymentFrequency": "daily",
+    "contactMethod": "whatsapp",
+    "message": "Testing inquiry",
+    "createdAt": "2026-08-22T15:48:05.576Z",
+    "status": "new"
+  }
+]
